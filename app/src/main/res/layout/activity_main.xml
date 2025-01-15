@@ -16,4 +16,11 @@
         android:layout_margin="40dp"
         android:src="@drawable/upload"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVideos"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_video"/>
+    
 </RelativeLayout>

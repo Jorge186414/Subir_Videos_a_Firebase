@@ -6,4 +6,7 @@
     <string name="btnSelectVideo">Seleccionar Video</string>
     <string name="btnUploadVideo">Subir Video</string>
     <string name="tvEstadoVideo">No se ha seleccionado un video</string>
+    <string name="tvTituloVideo">Titulo del video: </string>
+    <string name="tvAutorVideo">Autor del video: </string>
+    <string name="tvFechaSubida">dd/MM/yyyy hh:mm</string>
 </resources>
