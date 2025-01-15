@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".AgregarVideoActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etTituloVideo"
+            android:text="@string/etTituloVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textCapSentences"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_below="@+id/tilTitulo"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+    <TextView
+        android:id="@+id/tvEstadoVideo"
+        android:text="@string/tvEstadoVideo"
+        android:layout_below="@+id/videoView"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSelectVideo"
+        android:text="@string/btnSelectVideo"
+        android:layout_below="@+id/tvEstadoVideo"
+        app:cornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUploadVideo"
+        android:text="@string/btnUploadVideo"
+        android:layout_below="@+id/btnSelectVideo"
+        app:cornerRadius="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

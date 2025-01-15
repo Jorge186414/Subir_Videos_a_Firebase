@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         comprobarSesion()
+
+        binding.fabAgregarvideo.setOnClickListener {
+            startActivity(Intent(applicationContext, AgregarVideoActivity::class.java))
+        }
     }
 
     private fun comprobarSesion(){
