@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Videos_a_Firebase</string>
     <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="default_web_client_id_strings">web_client_id_in_firebase</string>
 </resources>
