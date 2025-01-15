@@ -49,7 +49,11 @@ class AgregarVideoActivity : AppCompatActivity() {
                     solicitarPermisoAlmacenamiento.launch(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 }
             }else if(itemId == 2){
-                Toast.makeText(applicationContext, "Seleccionaste Camara", Toast.LENGTH_SHORT).show()
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                    recordVideo()
+                }else{
+                    solicitarPermisoCamara.launch(android.Manifest.permission.CAMERA)
+                }
             }
             return@setOnMenuItemClickListener true
         }
@@ -60,6 +64,31 @@ class AgregarVideoActivity : AppCompatActivity() {
         intent.type = "video/*"
         resultGaleriaARL.launch(intent)
     }
+
+    private fun recordVideo(){
+        val intent = Intent(MediaStore.ACTION_VIDEO_CAPTURE)
+        recordVideoARL.launch(intent)
+    }
+
+    private val recordVideoARL = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+        if(result.resultCode == Activity.RESULT_OK){
+            val data = result.data
+            uriVideo = data!!.data
+            setVideo()
+            binding.tvEstadoVideo.text = "Video seleccionado y listo"
+        }else{
+            Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private val solicitarPermisoCamara =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()){ esConcedido ->
+            if(esConcedido){
+                recordVideo()
+            }else{
+                Toast.makeText(this, "El permiso para la camara no se ha concedido", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     private val resultGaleriaARL =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ resultado ->
