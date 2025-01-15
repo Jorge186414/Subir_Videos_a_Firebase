@@ -12,24 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Videos_a_Firebase"
         tools:targetApi="31">
-
+        <activity
+            android:name=".LoginGoogleActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

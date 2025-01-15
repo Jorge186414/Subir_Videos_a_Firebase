@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Videos_a_Firebase</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
 </resources>
